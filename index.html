@@ -99,7 +99,7 @@
   }
   .nav{
     display:flex;align-items:center;justify-content:space-between;
-    height:88px;
+    height:72px;
   }
   .nav-links{display:flex;gap:32px;align-items:center}
   .nav-links a{font-size:14px;color:#222;font-weight:500;position:relative}
@@ -110,17 +110,27 @@
   .nav-phone b{color:var(--ink);font-weight:500}
 
   /* ===== Logo ===== */
-  .logo{display:flex;align-items:center;gap:12px}
-  .logo-mark{
-    height:56px;
-    display:block;flex-shrink:0;
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-img{display:block;height:34px;width:auto;max-width:220px}
+  .foot-logo .logo-img{height:30px;filter:invert(1);mix-blend-mode:screen}
+  .hero-img-badge .logo-img{height:20px}
+
+  /* Back-to-top button */
+  .to-top{
+    position:fixed;right:22px;bottom:22px;
+    width:48px;height:48px;border-radius:50%;
+    background:var(--ink);color:#fff;border:none;cursor:pointer;
+    display:grid;place-items:center;z-index:200;
+    opacity:0;pointer-events:none;transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, background .2s ease;
+    box-shadow:0 10px 28px rgba(0,0,0,.18);
   }
-  .logo-mark img{display:block;height:100%;width:auto}
-  .logo-mark svg{display:block;width:100%;height:100%}
-  .logo-mark.sm{height:34px}
-  .logo-word{display:flex;flex-direction:column;line-height:1}
-  .logo-word b{font-weight:600;font-size:15px;letter-spacing:.02em;color:var(--ink)}
-  .logo-word span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .to-top:hover{background:#000}
+  .to-top svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  @media (max-width:640px){
+    .to-top{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px}
+  }
 
   /* ===== Hero ===== */
   .hero{padding:72px 0 96px;position:relative;overflow:hidden}
@@ -150,9 +160,7 @@
   }
   .hero-img-badge b{display:block;font-weight:600;color:var(--ink);font-size:14px;line-height:1.2}
   .hero-img-badge span{color:var(--muted);font-size:12px}
-  .hero-img-badge .mini-logo{height:28px;flex-shrink:0}
-  .hero-img-badge .mini-logo img{display:block;height:100%;width:auto}
-  .hero-img-badge .mini-logo svg{display:block;width:100%;height:100%}
+  .hero-img-badge .mini-logo{flex-shrink:0;display:flex;align-items:center}
 
   /* ===== Ticker / marquee ===== */
   .ticker{
@@ -358,7 +366,6 @@
   footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
   footer a:hover{color:#fff}
   .foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:20px}
-  .foot-logo .logo-mark{height:36px}
   .foot-logo .logo-word b{color:#fff}
   .foot-tag{color:#888;line-height:1.6;max-width:28ch}
   .foot-bottom{border-top:1px solid #222;padding-top:24px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#666}
@@ -389,19 +396,183 @@
     .foot-grid{grid-template-columns:1fr}
     .nav-phone{display:none}
   }
+
+  /* ===== MOBILE REDESIGN (≤640px only — does not affect desktop) ===== */
+  @media (max-width: 640px){
+    :root{
+      --radius: 10px;
+      --radius-lg: 14px;
+    }
+    html,body{overflow-x:hidden}
+
+    /* Container padding */
+    .container{padding:0 20px}
+    section{padding:48px 0}
+
+    /* ---------- Header ---------- */
+    header.site{
+      padding-top:env(safe-area-inset-top);
+      backdrop-filter:saturate(180%) blur(14px);
+      -webkit-backdrop-filter:saturate(180%) blur(14px);
+      background:rgba(255,255,255,.82);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    header.site .nav{height:58px;padding:0 16px}
+    .logo-word{display:none !important}
+    .logo-mark{width:38px;height:38px}
+    .nav-links{display:none !important}
+    .nav-phone{display:none !important}
+    /* Turn "Free Estimate" into a 44×44 phone circle — via ::before overlay */
+    .nav-cta .btn-primary{
+      width:44px;height:44px;padding:0;border-radius:50%;
+      font-size:0;overflow:hidden;position:relative;
+      background:var(--ink) !important;
+    }
+    .nav-cta .btn-primary .arrow{display:none}
+    .nav-cta .btn-primary::after{
+      content:"";position:absolute;inset:0;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/></svg>");
+      background-repeat:no-repeat;background-position:center;background-size:18px 18px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero{padding:24px 0 48px;background:var(--surface-warm)}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .hero-grid > div:first-child{order:2}     /* copy below */
+    .hero-img{order:1;aspect-ratio:4/5;border-radius:var(--radius-lg);margin:0 -4px}
+    .hero-img-badge{left:14px;bottom:14px;padding:8px 12px;gap:10px}
+    .hero-img-badge b{font-size:12px}
+    .hero-img-badge span{font-size:10px}
+    .hero-img-badge .logo-img{height:16px}
+
+    .hero .eyebrow{font-size:10px;letter-spacing:.14em}
+    .hero .eyebrow::before,.hero .eyebrow::after{display:none}
+    .hero h1{font-size:38px !important;line-height:1.05 !important;letter-spacing:-0.02em;margin-top:14px}
+    .hero h1 em{font-size:38px !important}
+    .hero-sub{font-size:15px;line-height:1.55;margin:18px 0 22px;max-width:none}
+    .hero-ctas{flex-direction:column;gap:10px;align-items:stretch}
+    .hero-ctas .btn{justify-content:center;width:100%;padding:16px 22px;font-size:15px}
+    .hero-proof{
+      margin-top:28px;padding-top:16px;
+      flex-direction:column;gap:10px;
+    }
+    .hero-proof div{font-size:12px}
+
+    /* ---------- Ticker ---------- */
+    .ticker{padding:14px 0;font-size:12px}
+    .ticker-track span{gap:24px;padding-right:24px}
+
+    /* ---------- Section headers ---------- */
+    .section-head{grid-template-columns:1fr;gap:14px;margin-bottom:28px}
+    .section-head h2,h2{font-size:30px !important;line-height:1.1 !important;letter-spacing:-0.02em}
+    .section-head .aside{font-size:14px}
+    .eyebrow{font-size:10px;letter-spacing:.14em}
+
+    /* ---------- Services (mobile: stacked photo cards, no sticky preview) ---------- */
+    #services{padding:48px 0}
+    .svc-layout{display:block}
+    .svc-preview{display:none}   /* hide sticky panel */
+    .svc-list{border-top:none;display:grid;grid-template-columns:1fr;gap:14px}
+    .svc-row{
+      display:grid;grid-template-columns:1fr;gap:8px;
+      padding:0 !important;border-bottom:none !important;
+      background:#fff !important;border-radius:var(--radius-lg);overflow:hidden;
+      box-shadow:var(--shadow-sm);
+    }
+    .svc-row::before{display:none}
+    .svc-row:hover, .svc-row.is-active{padding-left:0 !important;background:#fff !important}
+    .svc-row .num{display:none}
+    .svc-row .arw{display:none}
+    /* Inject photo background via data-idx + ::before on inner name */
+    .svc-row .name{
+      position:relative;padding:18px 18px 20px 18px;
+      font-size:18px !important;font-weight:400 !important;
+      color:var(--ink) !important;background:#fff;
+      border-top:1px solid var(--border);
+    }
+    .svc-row .name::before{
+      content:"";display:block;height:160px;margin:-18px -18px 14px -18px;
+      background-size:cover;background-position:center;background-color:#EFEAE0;
+    }
+    .svc-row[data-idx="0"] .name::before{background-image:url("https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1000&q=80")}
+    .svc-row[data-idx="1"] .name::before{background-image:url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&q=80")}
+    .svc-row[data-idx="2"] .name::before{background-image:url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1000&q=80")}
+    .svc-row[data-idx="3"] .name::before{background-image:url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80")}
+    .svc-row[data-idx="4"] .name::before{background-image:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=80")}
+    .svc-row[data-idx="5"] .name::before{background-image:url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&q=80")}
+    .svc-row[data-idx="6"] .name::before{background-image:url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1000&q=80")}
+    .svc-row[data-idx="7"] .name::before{background-image:url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&q=80")}
+
+    /* ---------- Projects ---------- */
+    .proj-grid{grid-template-columns:1fr;gap:14px}
+    .proj.wide,.proj.narrow,.proj.third{grid-column:span 1}
+    .proj{border-radius:var(--radius-lg)}
+    .proj img{aspect-ratio:4/3}
+    .proj-meta{padding:14px}
+    .proj-meta .t{font-size:16px}
+    .proj-meta .d{font-size:12px}
+
+    /* ---------- Why tiles ---------- */
+    .why-head{margin-bottom:28px}
+    .why-head h2{font-size:28px !important}
+    .why-head p{font-size:14px}
+    .why-tiles{grid-template-columns:1fr;gap:10px}
+    .why-tile{padding:18px;gap:10px;border-radius:var(--radius-lg)}
+    .why-tile .ic{width:34px;height:34px;border-radius:8px}
+    .why-tile .ic svg{width:16px;height:16px}
+    .why-tile b{font-size:15px}
+    .why-tile p{font-size:13px}
+
+    /* ---------- Process (dark) ---------- */
+    .process{padding:60px 0}
+    .process-steps{grid-template-columns:1fr;gap:28px;margin-top:32px}
+    .step{padding-top:18px}
+    .step h4{font-size:22px}
+    .step p{font-size:13px}
+
+    /* ---------- FAQ ---------- */
+    .faq-grid{grid-template-columns:1fr;gap:20px}
+    details summary{font-size:15px;gap:14px}
+    details p{font-size:14px}
+
+    /* ---------- CTA band ---------- */
+    .cta-band{padding:56px 0}
+    .cta-inner{grid-template-columns:1fr;gap:22px}
+    .cta-inner h2{font-size:30px !important}
+    .cta-inner p{font-size:15px}
+    .cta-right .btn{width:100%;justify-content:center}
+
+    /* ---------- Footer ---------- */
+    footer.site{padding:48px 0 24px}
+    .foot-grid{grid-template-columns:1fr;gap:28px;margin-bottom:28px}
+    .foot-bottom{flex-direction:column;gap:10px;text-align:center;font-size:10px}
+    .foot-logo .logo-img{height:26px}
+  }
 #services .title h2{font-weight:300}
 #projects .title h2{font-weight:300}
 </style>
 <link id="gfont-Roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><link id="gfont-Montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><link id="gfont-Nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&amp;display=swap"><link id="gfont-Inter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"></head>
 <body data-cc-id="cc-1" style="cursor: crosshair;">
 
-<!-- ===== RCK Logo loaded from assets/rck-logo.png ===== -->
+<!-- ===== RCK Logo Symbol ===== -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <symbol id="rck-logo" viewBox="0 0 64 64">
+    <rect x="0" y="0" width="64" height="64" rx="7" fill="#111111"></rect>
+    <rect x="0" y="0" width="6" height="64" fill="#2F6FED"></rect>
+    <text x="35" y="41" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle" letter-spacing="-1">RCK</text>
+    <rect x="14" y="50" width="36" height="1.2" fill="#ffffff" opacity=".4"></rect>
+  </symbol>
+</svg>
 
 <!-- ============== HEADER ============== -->
 <header class="site" data-cc-id="cc-1">
   <div class="container nav" data-cc-id="cc-1">
     <a class="logo" href="#" data-cc-id="cc-2">
-      <span class="logo-mark"><img src="assets/rck-logo.png" alt="RCK Development"></span>
+      <img class="logo-img" src="assets/rck-logo.jpg" alt="RCK Development">
+      <span class="logo-word" style="display:none">
+        <b data-cc-id="cc-3">RCK Development</b>
+        <span>General Contractor · Bay Area</span>
+      </span>
     </a>
     <nav class="nav-links">
       <a href="#services" data-cc-id="cc-9" style="">Services</a>
@@ -436,7 +607,7 @@
     <div class="hero-img">
       <img src="assets/adu-hero.png" alt="Backyard ADU with deck, fire pit and string lights at dusk" style="width:100%;height:100%;object-fit:cover">
       <div class="hero-img-badge">
-        <div class="mini-logo"><img src="assets/rck-logo.png" alt="RCK"></div>
+        <div class="mini-logo"><img class="logo-img" src="assets/rck-logo.jpg" alt="RCK"></div>
         <div>
           <b>Backyard ADU</b>
           <span>Bay Area · RCK Development</span>
@@ -792,7 +963,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <span class="logo-mark"><img src="assets/rck-logo-white.png" alt="RCK Development"></span>
+          <img class="logo-img" src="assets/rck-logo.jpg" alt="RCK Development">
         </div>
         <p class="foot-tag">Bay Area general contractor specializing in residential remodels, ADUs, mechanical and custom cabinetry.</p>
       </div>
@@ -833,4 +1004,23 @@
 
 
 
+<!-- Back to top -->
+<button class="to-top" id="toTop" aria-label="Back to top" type="button">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"></path></svg>
+</button>
+<script>
+  (function(){
+    const btn = document.getElementById('toTop');
+    if(!btn) return;
+    const onScroll = () => {
+      if(window.scrollY > 600) btn.classList.add('show');
+      else btn.classList.remove('show');
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+    btn.addEventListener('click', () => {
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  })();
+</script>
 </body></html>
