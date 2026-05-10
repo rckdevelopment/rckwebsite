@@ -106,7 +106,7 @@
   .nav-links a:hover{color:var(--ink)}
   .nav-links a:hover::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--ink)}
   .nav-cta{display:flex;gap:12px;align-items:center}
-  .nav-phone{font-family:var(--mono);font-size:13px;color:#222}
+  .nav-phone{font-family:var(--sans);font-size:14px;color:#222}
   .nav-phone b{color:var(--ink);font-weight:500}
 
   /* ===== Logo ===== */
@@ -495,13 +495,12 @@
       background-size:cover;background-position:center;background-color:#EFEAE0;
     }
     .svc-row[data-idx="0"] .name::before{background-image:url("https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1000&q=80")}
-    .svc-row[data-idx="1"] .name::before{background-image:url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&q=80")}
-    .svc-row[data-idx="2"] .name::before{background-image:url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1000&q=80")}
-    .svc-row[data-idx="3"] .name::before{background-image:url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80")}
-    .svc-row[data-idx="4"] .name::before{background-image:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=80")}
-    .svc-row[data-idx="5"] .name::before{background-image:url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&q=80")}
-    .svc-row[data-idx="6"] .name::before{background-image:url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1000&q=80")}
-    .svc-row[data-idx="7"] .name::before{background-image:url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&q=80")}
+    .svc-row[data-idx="1"] .name::before{background-image:url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1000&q=80")}
+    .svc-row[data-idx="2"] .name::before{background-image:url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1000&q=80")}
+    .svc-row[data-idx="3"] .name::before{background-image:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=80")}
+    .svc-row[data-idx="4"] .name::before{background-image:url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&q=80")}
+    .svc-row[data-idx="5"] .name::before{background-image:url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1000&q=80")}
+    .svc-row[data-idx="6"] .name::before{background-image:url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&q=80")}
 
     /* ---------- Projects ---------- */
     .proj-grid{grid-template-columns:1fr;gap:14px}
@@ -550,6 +549,76 @@
   }
 #services .title h2{font-weight:300}
 #projects .title h2{font-weight:300}
+  /* ===== Contact Form ===== */
+  .contact-band{background:#332C25;color:#fff;padding:120px 0;position:relative}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+  .contact-left h2{color:#fff;text-wrap:balance}
+  .contact-left .eyebrow{color:rgba(255,255,255,.6)}
+  .contact-left p{color:rgba(255,255,255,.75);font-size:17px;line-height:1.6;margin:24px 0 32px;max-width:42ch}
+  .contact-meta{display:flex;flex-direction:column;gap:18px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15)}
+  .contact-meta-item{display:flex;align-items:flex-start;gap:14px}
+  .contact-meta-item .ic{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;flex-shrink:0;color:#EEEC E6}
+  .contact-meta-item .ic svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .contact-meta-item b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:4px}
+  .contact-meta-item span{font-size:16px;color:#fff;font-weight:400}
+  .contact-meta-item a{color:#fff;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:1px;transition:border-color .2s}
+  .contact-meta-item a:hover{border-color:#fff}
+
+  .contact-form{
+    background:#fff;color:var(--ink);
+    border-radius:var(--radius-lg);padding:40px;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+  }
+  .contact-form h3{font-size:24px;font-weight:300;margin-bottom:8px;letter-spacing:-.02em}
+  .contact-form .form-sub{font-size:14px;color:#666;margin-bottom:28px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#666;font-weight:500}
+  .field label .req{color:#B5432F}
+  .field input, .field select, .field textarea{
+    font-family:inherit;font-size:15px;color:var(--ink);
+    border:1px solid #E5E1D8;border-radius:8px;
+    padding:13px 14px;background:#FAFAF7;
+    transition:border-color .15s ease, background .15s ease;
+    width:100%;box-sizing:border-box;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--ink);background:#fff;
+  }
+  .field textarea{min-height:110px;resize:vertical;line-height:1.5}
+  .field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='%23332c25' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+  .field-note{font-size:12px;color:#888;margin-top:4px}
+
+  .form-submit{
+    margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  .form-submit button{
+    appearance:none;border:0;cursor:pointer;
+    background:var(--ink);color:#fff;
+    font-family:inherit;font-size:15px;font-weight:500;letter-spacing:.01em;
+    padding:14px 24px;border-radius:999px;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .form-submit button:hover{background:#000;transform:translateY(-1px)}
+  .form-submit button .arrow{transition:transform .2s ease}
+  .form-submit button:hover .arrow{transform:translateX(4px)}
+  .form-disclaimer{font-size:12px;color:#888;max-width:32ch;line-height:1.5}
+  .form-success{
+    display:none;padding:20px;border-radius:10px;
+    background:#F0EBDF;border:1px solid #D9CDB1;
+    color:#5C4A2A;font-size:14px;line-height:1.55;
+    margin-top:14px;
+  }
+  .form-success.is-shown{display:block}
+
+  @media (max-width:960px){
+    .contact-grid{grid-template-columns:1fr;gap:48px}
+    .contact-band{padding:72px 0}
+    .contact-form{padding:28px}
+    .form-row{grid-template-columns:1fr}
+  }
 </style>
 <link id="gfont-Roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><link id="gfont-Montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><link id="gfont-Nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&amp;display=swap"><link id="gfont-Inter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"></head>
 <body data-cc-id="cc-1" style="cursor: crosshair;">
@@ -568,21 +637,21 @@
 <header class="site" data-cc-id="cc-1">
   <div class="container nav" data-cc-id="cc-1">
     <a class="logo" href="#" data-cc-id="cc-2">
-      <img class="logo-img" src="assets/rck-logo.jpg" alt="RCK Development">
+      <img class="logo-img" src="assets/rck-logo.jpg" alt="RCK Development" style="height: 40px; width: 85.9297px">
       <span class="logo-word" style="display:none">
         <b data-cc-id="cc-3">RCK Development</b>
         <span>General Contractor · Bay Area</span>
       </span>
     </a>
     <nav class="nav-links">
-      <a href="#services" data-cc-id="cc-9" style="">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#process">Process</a>
-      <a href="#faq">FAQ</a>
+      <a href="#services" data-cc-id="cc-9" style="font-size: 1px">Services</a>
+      <a href="#projects" style="font-size: 16px">Projects</a>
+      <a href="#process" style="font-size: 16px">Process</a>
+      <a href="#faq" style="font-size: 16px">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <span class="nav-phone">Call <b>(408) 555‑0142</b></span>
-      <a href="#contact" class="btn btn-primary" data-cc-id="cc-27" style="background-color: rgb(120, 94, 72);">Free Estimate <span class="arrow" data-cc-id="cc-22" style="">→</span></a>
+      <span class="nav-phone" style="font-size: 16px; text-align: left; line-height: 1; width: 137.273px">Call <b>(408) 982-7586</b></span>
+      <a href="#contact" class="btn btn-primary" data-cc-id="cc-27" style="background-color: rgb(120, 94, 72); font-size: 16px">Free Estimate <span class="arrow" data-cc-id="cc-22" style="">→</span></a>
     </div>
   </div>
 </header>
@@ -591,12 +660,12 @@
 <section class="hero" data-cc-id="cc-2">
   <div class="container hero-grid" data-cc-id="cc-3">
     <div data-cc-id="cc-4">
-      <span class="eyebrow" data-cc-id="cc-15" style="">Licensed Bay Area General Contractor · CSLB #1098421</span>
+      <span class="eyebrow" data-cc-id="cc-15" style="">Licensed Bay Area General Contractor · CSLB #1154799</span>
       <h1 data-cc-id="cc-2" style="font-family: Montserrat; font-weight: 300; font-size: 60px;">Home remodels built around <em style="font-family: Montserrat; font-weight: 300; font-size: 60px;" data-cc-id="cc-4">clear process</em> and careful craft.</h1>
       <p class="hero-sub" data-cc-id="cc-3" style="">RCK Development handles kitchens, bathrooms, ADUs, additions, HVAC, plumbing and custom cabinetry — with straight estimates</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary" data-cc-id="cc-4" style="background-color: rgb(120, 95, 72);">Get a Free Estimate <span class="arrow">→</span></a>
-        <a href="#projects" class="btn btn-ghost" data-cc-id="cc-12">See Our Work</a>
+        <a href="#contact" class="btn btn-primary" data-cc-id="cc-4" style="background-color: rgb(120, 95, 72); font-size: 16px">Get a Free Estimate <span class="arrow">→</span></a>
+        <a href="#projects" class="btn btn-ghost" data-cc-id="cc-12" style="font-size: 16px">See Our Work</a>
       </div>
       <div class="hero-proof">
         <div><span class="dot"></span> Licensed &amp; insured</div>
@@ -632,9 +701,7 @@
         <span class="eyebrow">What we build</span>
         <h2>Every service you need for a remodel — handled in-house.</h2>
       </div>
-      <div class="aside">
-        From permits and framing to cabinets, HVAC and plumbing — we handle it all, so you have one point of contact and one clear scope from start to finish.
-      </div>
+      <div class="aside"></div>
     </div>
 
     <div class="svc-layout">
@@ -646,50 +713,37 @@
         </div>
         <div class="svc-row" data-idx="1">
           <div class="num">/ 02</div>
-          <div class="name">Bathroom Remodeling</div>
+          <div class="name">ADU & Garage Conversion</div>
           <div class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </div>
         <div class="svc-row" data-idx="2">
           <div class="num">/ 03</div>
-          <div class="name">ADU & Garage Conversion</div>
+          <div class="name">Full Home Renovation</div>
           <div class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </div>
         <div class="svc-row" data-idx="3">
           <div class="num">/ 04</div>
-          <div class="name">Full Home Renovation</div>
+          <div class="name">Room Additions</div>
           <div class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </div>
         <div class="svc-row" data-idx="4">
           <div class="num">/ 05</div>
-          <div class="name">Room Additions</div>
+          <div class="name">HVAC Installation</div>
           <div class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </div>
         <div class="svc-row" data-idx="5">
           <div class="num">/ 06</div>
-          <div class="name">HVAC Installation</div>
+          <div class="name">Plumbing</div>
           <div class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </div>
         <div class="svc-row" data-idx="6">
           <div class="num">/ 07</div>
-          <div class="name">Plumbing</div>
-          <div class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </div>
-        <div class="svc-row" data-idx="7">
-          <div class="num">/ 08</div>
           <div class="name">Custom Cabinetry & Woodwork</div>
           <div class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
         </div>
       </div>
       <div class="svc-preview" id="svcPreview">
         <div class="svc-slide is-active" data-idx="0">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80" alt="Kitchen Remodeling" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
-          <div class="svc-caption">
-            <span class="tag">Remodel</span>
-            <div class="t">Bathroom Remodeling</div>
-            <div class="d">Layout changes, new cabinets, stone counters, tile, lighting and appliances — designed for daily use and long-term value.</div>
-          </div>
-        </div>
-        <div class="svc-slide" data-idx="1">
           <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1400&q=80" alt="Bathroom Remodeling" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
           <div class="svc-caption">
             <span class="tag">Remodel</span>
@@ -697,7 +751,7 @@
             <div class="d">From simple refreshes to full reconfigurations — walk-in showers, double vanities, heated floors, clean waterproofing.</div>
           </div>
         </div>
-        <div class="svc-slide" data-idx="2">
+        <div class="svc-slide" data-idx="1">
           <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80" alt="ADU & Garage Conversion" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
           <div class="svc-caption">
             <span class="tag">Addition</span>
@@ -705,7 +759,7 @@
             <div class="d">Detached, attached, and junior ADUs. We handle planning, permits, and build — rental income or multi-gen living.</div>
           </div>
         </div>
-        <div class="svc-slide" data-idx="3">
+        <div class="svc-slide" data-idx="2">
           <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=80" alt="Full Home Renovation" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
           <div class="svc-caption">
             <span class="tag">Whole home</span>
@@ -713,7 +767,7 @@
             <div class="d">Down-to-studs remodels with coordinated structural, mechanical and finish work. One crew, one timeline.</div>
           </div>
         </div>
-        <div class="svc-slide" data-idx="4">
+        <div class="svc-slide" data-idx="3">
           <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400&q=80" alt="Room Additions" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
           <div class="svc-caption">
             <span class="tag">Addition</span>
@@ -721,7 +775,7 @@
             <div class="d">Extra bedrooms, primary suites, second-story additions — matched to your home’s existing structure and style.</div>
           </div>
         </div>
-        <div class="svc-slide" data-idx="5">
+        <div class="svc-slide" data-idx="4">
           <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&q=80" alt="HVAC Installation" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
           <div class="svc-caption">
             <span class="tag">Mechanical</span>
@@ -729,7 +783,7 @@
             <div class="d">High-efficiency central systems, heat pumps, mini-splits and ductwork. Sized properly for Bay Area homes.</div>
           </div>
         </div>
-        <div class="svc-slide" data-idx="6">
+        <div class="svc-slide" data-idx="5">
           <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1400&q=80" alt="Plumbing" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
           <div class="svc-caption">
             <span class="tag">Mechanical</span>
@@ -737,7 +791,7 @@
             <div class="d">Repipes, fixture upgrades, gas lines, tankless water heaters, drain work. Clean runs, permitted, inspected.</div>
           </div>
         </div>
-        <div class="svc-slide" data-idx="7">
+        <div class="svc-slide" data-idx="6">
           <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=80" alt="Custom Cabinetry & Woodwork" onerror="this.style.background='#3a342d';this.removeAttribute('src')">
           <div class="svc-caption">
             <span class="tag">Millwork</span>
@@ -779,9 +833,7 @@
         <span class="eyebrow">Selected work</span>
         <h2 data-cc-id="cc-25" style="font-weight: 400;">recent projects across the Bay Area.</h2>
       </div>
-      <div class="aside">
-        A small sample of kitchens, bathrooms and ADUs we’ve finished in the last 18 months. Every photo is a real RCK project — no stock interiors.
-      </div>
+      <div class="aside"></div>
     </div>
 
     <div class="proj-grid">
@@ -843,11 +895,8 @@
       <p>Most of what goes wrong on a remodel isn't about skill. It's about communication, coordination and follow-through — that's where we focus.</p>
     </div>
     <div class="why-tiles">
-      <div class="why-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><b>Clear communication</b><p>Weekly updates, a single point of contact, and responses inside one business day.</p></div>
-      <div class="why-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 15 9 4.6a1 1 0 0 0-1.4 0L5 7.2a1 1 0 0 0 0 1.4L15.4 19"/><path d="M14 22l-4-4"/><path d="M9 18l-3 3"/><path d="M12 14l-3 3"/></svg></div><b>Clean, organized sites</b><p>Daily cleanup, dust containment, and respect for the parts of your home we aren't working in.</p></div>
       <div class="why-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></div><b>Transparent pricing</b><p>Line-item estimates. Change orders in writing before any extra work starts — no surprise invoices.</p></div>
-      <div class="why-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><b>Licensed &amp; insured</b><p>CSLB #1098421. General liability and workers' comp. We pull the right permits, always.</p></div>
-      <div class="why-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><b>Local knowledge</b><p>Palo Alto, Sunnyvale, San Jose, Mountain View, Los Altos, Cupertino — we know these cities.</p></div>
+      <div class="why-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><b>Licensed &amp; insured</b><p>CSLB #1154799. General liability and workers' comp. We pull the right permits, always.</p></div>
       <div class="why-tile"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><b>On schedule</b><p>Realistic timelines, tight scheduling, and a dedicated lead making sure work stays on track.</p></div>
     </div>
   </div>
@@ -904,7 +953,7 @@
         <span class="eyebrow">Frequently asked</span>
         <h2 style="margin-top:16px">Questions we hear before the first meeting.</h2>
         <p class="muted" style="margin-top:20px;max-width:36ch">
-          Still have something we didn’t cover? Call us at <b style="color:var(--ink)">(408) 555‑0142</b> or send a message — we’ll get back the same day.
+          Still have something we didn’t cover? Call us at <b style="color:var(--ink)">(408) 982-7586</b> or send a message — we’ll get back the same day.
         </p>
       </div>
       <div class="faq-list">
@@ -930,7 +979,7 @@
         </details>
         <details>
           <summary>Are you licensed and insured? <span class="ic">+</span></summary>
-          <p>Yes. California CSLB license #1098421. We carry general liability and workers’ compensation insurance. We’re happy to send certificates before you sign.</p>
+          <p>Yes. California CSLB license #1154799. We carry general liability and workers’ compensation insurance. We’re happy to send certificates before you sign.</p>
         </details>
         <details>
           <summary>Which areas do you serve? <span class="ic">+</span></summary>
@@ -941,21 +990,156 @@
   </div>
 </section>
 
-<!-- ============== CTA ============== -->
-<section class="cta-band" id="contact" data-cc-id="cc-40">
-  <div class="container cta-inner" data-cc-id="cc-20">
-    <div>
-      <span class="eyebrow" style="color:rgba(255,255,255,.7)">Ready when you are</span>
-      <h2>Let’s price out your remodel — clearly.</h2>
-      <p>Tell us a little about your project and we’ll send a realistic estimate and timeline within a few business days. No pressure, no upsell.</p>
-    </div>
-    <div class="cta-right" data-cc-id="cc-6">
-      <a href="#" class="btn btn-primary" data-cc-id="cc-5" style="background-color: rgb(238, 236, 230); color: rgb(51, 44, 37);">Request Free Estimate <span class="arrow" style="color: rgb(51, 44, 37);">→</span></a>
-      <a href="#" class="btn btn-ghost" data-cc-id="cc-21" style="">Schedule Consultation</a>
-      <span class="cta-phone">Prefer to talk now<b>(408) 555‑0142</b></span>
+<!-- ============== CONTACT ============== -->
+<section class="contact-band" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="eyebrow">Ready when you are</span>
+        <h2 style="margin-top:14px">Let's price out your remodel — clearly.</h2>
+        <p>Tell us a little about your project and we'll get back to you within one business day with a realistic estimate and timeline. No pressure, no upsell.</p>
+
+        <div class="contact-meta">
+          <div class="contact-meta-item">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div>
+              <b>Phone</b>
+              <span><a href="tel:+14089827586">(408) 982-7586</a></span>
+            </div>
+          </div>
+          <div class="contact-meta-item">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <div>
+              <b>Email</b>
+              <span><a href="mailto:therckdevelopment@gmail.com">therckdevelopment@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="contact-meta-item">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>
+              <b>Service area</b>
+              <span>Santa Clara &amp; San Mateo Counties</span>
+            </div>
+          </div>
+          <div class="contact-meta-item">
+            <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div>
+              <b>Hours</b>
+              <span>Mon–Fri · 8a–6p</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="estimateForm" action="https://formsubmit.co/therckdevelopment@gmail.com" method="POST">
+        <h3>Request a free estimate</h3>
+        <p class="form-sub">Quick form — takes about a minute.</p>
+
+        <!-- Formsubmit config -->
+        <input type="hidden" name="_subject" value="New estimate request — RCK Development">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://rckdevelopment.com/?sent=1">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Full name <span class="req">*</span></label>
+            <input id="f-name" type="text" name="name" required placeholder="Jane Doe">
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone <span class="req">*</span></label>
+            <input id="f-phone" type="tel" name="phone" required placeholder="(408) 555-0142">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field full">
+            <label for="f-email">Email <span class="req">*</span></label>
+            <input id="f-email" type="email" name="email" required placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="f-type">Project type <span class="req">*</span></label>
+            <select id="f-type" name="project_type" required>
+              <option value="">Select…</option>
+              <option>Kitchen remodel</option>
+              <option>Bathroom remodel</option>
+              <option>ADU / garage conversion</option>
+              <option>Room addition</option>
+              <option>Full home renovation</option>
+              <option>HVAC / plumbing</option>
+              <option>Custom cabinetry</option>
+              <option>Other / not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-budget">Approx. budget</label>
+            <select id="f-budget" name="budget">
+              <option value="">Select…</option>
+              <option>Under $50k</option>
+              <option>$50k – $100k</option>
+              <option>$100k – $250k</option>
+              <option>$250k – $500k</option>
+              <option>$500k+</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="f-city">City</label>
+            <input id="f-city" type="text" name="city" placeholder="e.g. Sunnyvale">
+          </div>
+          <div class="field">
+            <label for="f-timing">Ideal start</label>
+            <select id="f-timing" name="start_timing">
+              <option value="">Select…</option>
+              <option>ASAP</option>
+              <option>Within 1–3 months</option>
+              <option>3–6 months</option>
+              <option>6+ months / planning</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field full">
+            <label for="f-message">Tell us about your project</label>
+            <textarea id="f-message" name="message" placeholder="Square footage, scope, must-haves, anything you've already designed…"></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit">
+            Send request <span class="arrow">→</span>
+          </button>
+          <span class="form-disclaimer">We'll reply within one business day. Your info stays with RCK — never shared.</span>
+        </div>
+
+        <div class="form-success" id="formSuccess">
+          ✓ Thanks — your request is on its way to <b>therckdevelopment@gmail.com</b>. We'll be in touch within one business day.
+        </div>
+      </form>
     </div>
   </div>
 </section>
+
+<script>
+  // Catch ?sent=1 redirect (post-submit) and show success message inline
+  (function(){
+    if (new URLSearchParams(location.search).get('sent') === '1') {
+      const ok = document.getElementById('formSuccess');
+      if (ok) {
+        ok.classList.add('is-shown');
+        document.getElementById('estimateForm')?.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
+  })();
+</script>
 
 <!-- ============== FOOTER ============== -->
 <footer class="site" data-cc-id="cc-2" style="background-color: rgb(52, 44, 37);">
@@ -988,15 +1172,15 @@
       <div>
         <h5>Contact</h5>
         <ul>
-          <li>(408) 555‑0142</li>
-          <li>hello@rckdevelopment.com</li>
+          <li>(408) 982-7586</li>
+          <li>therckdevelopment@gmail.com</li>
           <li>Serving Santa Clara &amp; San Mateo Counties</li>
           <li>Mon–Fri · 8a–6p</li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 RCK Development · CSLB #1098421</span>
+      <span>© 2026 RCK Development · CSLB #1154799</span>
       <span>Licensed · Bonded · Insured</span>
     </div>
   </div>
