@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — RCK Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --ink: #1a1814;
+      --mid: #5a5550;
+      --rule: #d4cfc8;
+      --accent: #2b5c3e;
+      --accent-light: #e8f0eb;
+      --max: 740px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ───────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--ink);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-mark span {
+      color: #fff;
+      font-family: 'Instrument Serif', serif;
+      font-size: 13px;
+      letter-spacing: .5px;
+    }
+    .logo-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .logo-text small {
+      display: block;
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--mid);
+      letter-spacing: .3px;
+    }
+
+    /* ── HERO BAND ────────────────────────────────────── */
+    .hero {
+      background: var(--ink);
+      color: #fff;
+      padding: 72px 32px 60px;
+      text-align: center;
+    }
+    .hero .eyebrow {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #a8a39a;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: #b8cec0; }
+    .hero .meta {
+      font-size: 13px;
+      color: #7a756e;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero .meta span::before { content: '—  '; }
+
+    /* ── LAYOUT ───────────────────────────────────────── */
+    .page-wrap {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ── TOC SIDEBAR ──────────────────────────────────── */
+    .toc {
+      position: sticky;
+      top: 40px;
+      padding: 48px 0 48px;
+    }
+    .toc-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+    .toc ol li {
+      counter-increment: toc;
+      margin-bottom: 4px;
+    }
+    .toc ol li a {
+      font-size: 12.5px;
+      color: var(--mid);
+      text-decoration: none;
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      padding: 3px 0;
+      transition: color .2s;
+    }
+    .toc ol li a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 10px;
+      color: #bbb5ad;
+      flex-shrink: 0;
+    }
+    .toc ol li a:hover { color: var(--accent); }
+
+    /* ── CONTENT ──────────────────────────────────────── */
+    .content {
+      padding: 60px 0 100px;
+    }
+
+    .intro-block {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      padding: 20px 24px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 56px;
+    }
+    .intro-block p {
+      font-size: 14px;
+      color: #2f4a38;
+      line-height: 1.7;
+    }
+    .intro-block strong { font-weight: 500; }
+
+    section {
+      margin-bottom: 56px;
+      scroll-margin-top: 32px;
+    }
+    .section-header {
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-num {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #b0ab a3;
+      color: var(--mid);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    p { margin-bottom: 14px; color: #2e2b27; font-size: 15px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      margin: 12px 0 16px 0;
+      padding-left: 20px;
+    }
+    li {
+      font-size: 15px;
+      color: #2e2b27;
+      margin-bottom: 6px;
+      line-height: 1.65;
+    }
+    li strong { font-weight: 500; color: var(--ink); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .info-cell {
+      background: #fff;
+      padding: 16px 18px;
+    }
+    .info-cell .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--mid);
+      margin-bottom: 6px;
+    }
+    .info-cell .value {
+      font-size: 14px;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .rights-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    .rights-list li {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+    .rights-list li:last-child { border-bottom: none; }
+    .right-icon {
+      width: 26px; height: 26px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+    .right-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .right-text span {
+      font-size: 13.5px;
+      color: var(--mid);
+      line-height: 1.55;
+    }
+
+    .contact-card {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 10px;
+      padding: 28px 28px;
+      margin-top: 20px;
+    }
+    .contact-card .card-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: #e8e3dc;
+    }
+    .contact-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .contact-row .ci { color: #7a756e; font-size: 12px; width: 16px; text-align: center; }
+    .contact-row a { color: #b8cec0; text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+    .contact-row span { color: #c8c3bb; }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p { font-size: 12px; color: var(--mid); margin: 0; }
+    footer a { color: var(--mid); text-decoration: underline; font-size: 12px; }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 680px) {
+      .page-wrap {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0 20px;
+      }
+      .toc { display: none; }
+      .hero { padding: 48px 20px 40px; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-mark"><span>RCK</span></div>
+    <a href="RCK Development.html" class="logo-text">
+      RCK Development
+      <small>Bay Area General Contractor</small>
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="eyebrow">Legal &amp; Compliance</p>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="meta">
+      <span>Effective Date: January 1, 2025</span>
+      <span>Last Updated: May 12, 2026</span>
+      <span>CSLB #1154799</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="page-wrap">
+
+    <!-- TOC -->
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-label">Contents</p>
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#information-we-collect">Information We Collect</a></li>
+        <li><a href="#how-we-use">How We Use Your Information</a></li>
+        <li><a href="#sharing">Sharing &amp; Disclosure</a></li>
+        <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+        <li><a href="#data-security">Data Security</a></li>
+        <li><a href="#retention">Data Retention</a></li>
+        <li><a href="#california-rights">Your California Rights</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#third-party">Third-Party Links</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <div class="intro-block">
+        <p>
+          <strong>Your privacy matters to us.</strong> RCK Development ("Company," "we," "our," or "us") is committed to protecting the personal information you share with us. This Privacy Policy explains what data we collect through <a href="https://www.rckdevelopment.com" style="color:var(--accent)">rckdevelopment.com</a>, how we use it, and the choices you have. By using our website or contacting us for services, you agree to the practices described here. If you do not agree, please do not use our website.
+        </p>
+      </div>
+
+      <!-- 1 -->
+      <section id="overview">
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2>Overview</h2>
+        </div>
+        <p>RCK Development is a licensed general contractor serving residential homeowners throughout the San Francisco Bay Area. Our website is an informational and lead-generation site — we do not sell products online, and we do not operate a user-account system. The personal information we collect is limited to what you voluntarily provide when requesting an estimate, calling our office, or emailing us directly.</p>
+        <p>We do not sell your personal information to third parties. We do not use your information for targeted advertising. Your data is used solely to respond to your inquiry and, where applicable, to coordinate your construction project.</p>
+      </section>
+
+      <!-- 2 -->
+      <section id="information-we-collect">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2>Information We Collect</h2>
+        </div>
+        <p>We collect information in two ways: information you provide directly to us, and information collected automatically when you visit our website.</p>
+
+        <p><strong>Information you provide directly:</strong></p>
+        <ul>
+          <li><strong>Contact &amp; estimate form:</strong> Full name, phone number, email address, city, project type, approximate budget, and a description of your project.</li>
+          <li><strong>Phone calls &amp; emails:</strong> When you call <a href="tel:+14089827586" style="color:var(--accent)">(408) 982-7586</a> or email <a href="mailto:therckdevelopment@gmail.com" style="color:var(--accent)">therckdevelopment@gmail.com</a>, we may retain records of those communications.</li>
+          <li><strong>Project intake:</strong> If you proceed with a project, we may collect your property address, permit-related details, and other information necessary to plan and execute construction work.</li>
+        </ul>
+
+        <p><strong>Information collected automatically:</strong></p>
+        <ul>
+          <li><strong>Usage data:</strong> IP address, browser type and version, operating system, referring URL, pages visited, and time spent on the site.</li>
+          <li><strong>Device identifiers:</strong> General device type and screen resolution for analytics purposes.</li>
+          <li><strong>Cookies and similar technologies:</strong> As described in Section 5 below.</li>
+        </ul>
+
+        <p>We do not knowingly collect sensitive personal information such as Social Security numbers, financial account numbers, payment card details, health data, or biometric identifiers through our website.</p>
+      </section>
+
+      <!-- 3 -->
+      <section id="how-we-use">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2>How We Use Your Information</h2>
+        </div>
+        <p>We use the information we collect for the following purposes:</p>
+        <ul>
+          <li><strong>Respond to your inquiry.</strong> We use your contact information to reply to estimate requests, schedule consultations, and answer questions about our services.</li>
+          <li><strong>Provide and coordinate construction services.</strong> For clients who engage us for a project, we use your information to plan work, pull permits, coordinate with subcontractors, and communicate throughout the project lifecycle.</li>
+          <li><strong>Improve our website.</strong> We use aggregated, anonymous analytics data to understand how visitors use our site and to improve its content and performance.</li>
+          <li><strong>Legal compliance.</strong> We may retain and use your information as required by California law, including contractor licensing regulations administered by the CSLB, and to defend against legal claims.</li>
+          <li><strong>Business communications.</strong> With your consent, we may follow up on an estimate or send information about completed project phases. We will not send unsolicited marketing messages.</li>
+        </ul>
+        <p>We will only use your information for the purpose for which it was collected, or for a closely related purpose consistent with your reasonable expectations.</p>
+      </section>
+
+      <!-- 4 -->
+      <section id="sharing">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2>Sharing &amp; Disclosure</h2>
+        </div>
+        <p>We do not sell or rent your personal information. We may share your information only in the limited circumstances described below:</p>
+        <ul>
+          <li><strong>Service providers.</strong> We work with trusted third-party vendors (such as our website hosting provider, email platform, and analytics service) who process data on our behalf under contractual agreements that prohibit them from using your data for any purpose other than providing their service to us.</li>
+          <li><strong>Subcontractors.</strong> Where your project requires trade work (e.g., electrical, structural engineering), we may share relevant project details — not your personal contact information — on a need-to-know basis.</li>
+          <li><strong>Legal requirements.</strong> We may disclose your information if required to do so by law, subpoena, court order, or to cooperate with a government investigation. We may also disclose information to protect the rights, property, or safety of RCK Development, our clients, or others.</li>
+          <li><strong>Business transfers.</strong> In the unlikely event of a merger, acquisition, or sale of substantially all of our business assets, your information may be transferred as part of that transaction. We will notify you via email or a prominent notice on our website if your data becomes subject to a different privacy policy.</li>
+          <li><strong>With your consent.</strong> We may share information for any other purpose with your explicit prior consent.</li>
+        </ul>
+        <p>We never sell, lease, or exchange your personal information to data brokers, advertisers, or other third parties for marketing purposes.</p>
+      </section>
+
+      <!-- 5 -->
+      <section id="cookies">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2>Cookies &amp; Tracking Technologies</h2>
+        </div>
+        <p>Our website uses cookies and similar technologies to function properly and to understand how visitors interact with the site. We use the following types of cookies:</p>
+        <div class="info-grid">
+          <div class="info-cell">
+            <p class="label">Essential Cookies</p>
+            <p class="value">Required for the website to operate. Cannot be disabled.</p>
+          </div>
+          <div class="info-cell">
+            <p class="label">Analytics Cookies</p>
+            <p class="value">Help us understand page visits and traffic sources (e.g., Google Analytics). Anonymized.</p>
+          </div>
+          <div class="info-cell">
+            <p class="label">Preference Cookies</p>
+            <p class="value">Remember choices you make (e.g., form progress). Session-based.</p>
+          </div>
+          <div class="info-cell">
+            <p class="label">Third-Party Cookies</p>
+            <p class="value">May be set by embedded maps or fonts (e.g., Google Fonts, Google Maps).</p>
+          </div>
+        </div>
+        <p>You can control cookies through your browser settings. Most browsers allow you to refuse cookies or to be notified when a cookie is being sent. Disabling cookies may affect certain features of the website. For more information about Google Analytics data practices, visit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">policies.google.com/privacy</a>.</p>
+      </section>
+
+      <!-- 6 -->
+      <section id="data-security">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2>Data Security</h2>
+        </div>
+        <p>We implement reasonable and appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Our website is served over HTTPS (SSL/TLS encryption), and access to personal data stored in our systems is limited to personnel who need it to perform their job functions.</p>
+        <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. If you have reason to believe that your interaction with us is no longer secure, please contact us immediately at <a href="mailto:therckdevelopment@gmail.com" style="color:var(--accent)">therckdevelopment@gmail.com</a>.</p>
+      </section>
+
+      <!-- 7 -->
+      <section id="retention">
+        <div class="section-header">
+          <span class="section-num">07</span>
+          <h2>Data Retention</h2>
+        </div>
+        <p>We retain your personal information only as long as necessary for the purposes described in this policy, or as required by applicable law:</p>
+        <ul>
+          <li><strong>Estimate inquiries that did not proceed to a project:</strong> We retain contact information for up to 24 months for follow-up purposes, after which it is deleted or anonymized.</li>
+          <li><strong>Active and completed projects:</strong> Project records, including client contact information, are retained for a minimum of 7 years after project completion to comply with California contractor licensing requirements and applicable statutes of limitations.</li>
+          <li><strong>Analytics data:</strong> Anonymized website usage data may be retained indefinitely for aggregate trend analysis.</li>
+          <li><strong>Communications:</strong> Email and phone records related to a project are retained for the duration of the project and the 7-year retention period that follows.</li>
+        </ul>
+        <p>When data is no longer required, we take reasonable steps to securely delete or anonymize it.</p>
+      </section>
+
+      <!-- 8 -->
+      <section id="california-rights">
+        <div class="section-header">
+          <span class="section-num">08</span>
+          <h2>Your California Privacy Rights (CCPA / CPRA)</h2>
+        </div>
+        <p>California residents have specific rights regarding their personal information under the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA). These rights include:</p>
+
+        <ul class="rights-list">
+          <li>
+            <div class="right-icon">→</div>
+            <div class="right-text">
+              <strong>Right to Know</strong>
+              <span>You may request that we disclose the categories and specific pieces of personal information we have collected about you, the sources of that information, the business purpose for collecting it, and the categories of third parties with whom it has been shared.</span>
+            </div>
+          </li>
+          <li>
+            <div class="right-icon">→</div>
+            <div class="right-text">
+              <strong>Right to Delete</strong>
+              <span>You may request that we delete personal information we have collected from you, subject to certain exceptions (for example, information we are required to retain by law or that is needed to complete a transaction).</span>
+            </div>
+          </li>
+          <li>
+            <div class="right-icon">→</div>
+            <div class="right-text">
+              <strong>Right to Correct</strong>
+              <span>You may request that we correct inaccurate personal information we hold about you.</span>
+            </div>
+          </li>
+          <li>
+            <div class="right-icon">→</div>
+            <div class="right-text">
+              <strong>Right to Opt-Out of Sale or Sharing</strong>
+              <span>We do not sell or share your personal information for cross-context behavioral advertising. If our practices change, we will update this policy and provide an opt-out mechanism.</span>
+            </div>
+          </li>
+          <li>
+            <div class="right-icon">→</div>
+            <div class="right-text">
+              <strong>Right to Limit Use of Sensitive Personal Information</strong>
+              <span>We do not collect sensitive personal information (as defined by the CPRA) through our website beyond what is strictly necessary to provide our services.</span>
+            </div>
+          </li>
+          <li>
+            <div class="right-icon">→</div>
+            <div class="right-text">
+              <strong>Right to Non-Discrimination</strong>
+              <span>We will not discriminate against you — including by denying services, charging different prices, or providing a different quality of service — for exercising any of your privacy rights.</span>
+            </div>
+          </li>
+        </ul>
+
+        <p><strong>How to submit a request:</strong> To exercise any of these rights, please contact us by email at <a href="mailto:therckdevelopment@gmail.com" style="color:var(--accent)">therckdevelopment@gmail.com</a> or by phone at <a href="tel:+14089827586" style="color:var(--accent)">(408) 982-7586</a> with the subject line "California Privacy Request." We will verify your identity and respond within 45 days. If we need additional time, we will inform you of the reason and the extension period. If we deny your request, we will explain why and inform you that you can file a complaint with the <a href="https://cppa.ca.gov" target="_blank" rel="noopener" style="color:var(--accent)">California Privacy Protection Agency</a> or the California Attorney General.</p>
+
+        <p>You may also designate an authorized agent to make a request on your behalf by providing written authorization or a power of attorney.</p>
+      </section>
+
+      <!-- 9 -->
+      <section id="children">
+        <div class="section-header">
+          <span class="section-num">09</span>
+          <h2>Children's Privacy</h2>
+        </div>
+        <p>Our website and services are intended for adults who are homeowners or property managers making construction decisions. We do not knowingly collect personal information from anyone under the age of 18. If we become aware that we have inadvertently collected information from a minor, we will take steps to delete it promptly. If you believe a child has provided us with personal information, please contact us at <a href="mailto:therckdevelopment@gmail.com" style="color:var(--accent)">therckdevelopment@gmail.com</a>.</p>
+      </section>
+
+      <!-- 10 -->
+      <section id="third-party">
+        <div class="section-header">
+          <span class="section-num">10</span>
+          <h2>Third-Party Links &amp; Services</h2>
+        </div>
+        <p>Our website may contain links to third-party websites such as review platforms, licensing verification tools (CSLB), or mapping services. This Privacy Policy applies only to rckdevelopment.com. We are not responsible for the privacy practices of any third-party sites you visit through links on our website. We encourage you to review the privacy policies of any third-party site before providing them with personal information.</p>
+        <p>Our website may also embed third-party services including Google Fonts and Google Maps. These services may collect usage data per their own privacy policies, which are independent of ours. Google's privacy policy is available at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">policies.google.com/privacy</a>.</p>
+      </section>
+
+      <!-- 11 -->
+      <section id="changes">
+        <div class="section-header">
+          <span class="section-num">11</span>
+          <h2>Changes to This Policy</h2>
+        </div>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will update the "Last Updated" date at the top of this page. For significant changes, we may also provide a more prominent notice (such as a banner on our homepage) or notify you directly if we have your contact information.</p>
+        <p>Your continued use of our website after any changes to this policy constitutes your acceptance of the updated terms. We encourage you to review this policy periodically.</p>
+      </section>
+
+      <!-- 12 -->
+      <section id="contact">
+        <div class="section-header">
+          <span class="section-num">12</span>
+          <h2>Contact Us</h2>
+        </div>
+        <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal information, please reach out to us directly:</p>
+
+        <div class="contact-card">
+          <p class="card-title">RCK Development</p>
+          <div class="contact-row">
+            <span class="ci">✉</span>
+            <a href="mailto:therckdevelopment@gmail.com">therckdevelopment@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="ci">☎</span>
+            <a href="tel:+14089827586">(408) 982-7586</a>
+          </div>
+          <div class="contact-row">
+            <span class="ci">⊙</span>
+            <span>Service Area: Santa Clara, San Mateo &amp; Alameda Counties, CA</span>
+          </div>
+          <div class="contact-row">
+            <span class="ci">◷</span>
+            <span>Mon–Fri · 8:00 AM – 6:00 PM</span>
+          </div>
+          <div class="contact-row">
+            <span class="ci">#</span>
+            <span>CSLB License #1154799 · Licensed · Bonded · Insured</span>
+          </div>
+        </div>
+
+        <p style="margin-top:20px; font-size:13px; color:var(--mid);">
+          <em>This Privacy Policy was prepared for informational purposes. It does not constitute legal advice. For questions about your specific legal rights or obligations, please consult a qualified California privacy attorney.</em>
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 RCK Development · CSLB #1154799 · Bay Area, CA</p>
+    <p><a href="RCK Development.html">← Back to rckdevelopment.com</a></p>
+  </footer>
+
+</body>
+</html>
